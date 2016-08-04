@@ -128,9 +128,8 @@ entrada_usuario=[
 			
 			if(entrada_usuario[cara][5]==entrada_usuario[cara_compara][5]){
 				//alert("Caracteres mal ingresados.\n");
-				alert("Caracteres mal ingresados."); 	// Hay elementos centrales de las caras del mismo color\n");
+				alert("Colores mal ingresados."); 	// Hay elementos centrales de las caras del mismo color\n");
 				location.reload(true);
-				return 0;			
 			}				
 		}	
 	}
@@ -174,7 +173,7 @@ entrada_usuario=[
 				total_piezas_color[5]++;
 			}
 			else {
-				alert("Caracteres mal ingresados. Se introdujo un valor que no concordo con los colores\n");
+				alert("Colores mal ingresados. Se introdujo un color que no concordo con uno de los seis colores\n");
 				location.reload(true); 
 			
 			}
@@ -186,7 +185,7 @@ entrada_usuario=[
 	//Cada elemento de total_piezas_color tiene el numero de elementos que se encontraron de un color, cada cara tiene 9 asi que el valor de cada elemento del arreglo debe ser 9
 	for(piezasporcara=0; piezasporcara<=5; piezasporcara++){
 		if(total_piezas_color[piezasporcara]!=9){
-			alert("Caracteres mal ingresados. Se introdujo un color de elemento de mas\n");
+			alert("Colores mal ingresados.\n");   // Se introdujo un color de elemento de mas\n");
 			location.reload(true); 		
 		}	
 	}
@@ -222,7 +221,7 @@ entrada_usuario=[
 				total_CadaElemento[num_elemento]=total_CadaElemento[num_elemento]+1;
 			}	
 			else{
-				alert("Caracteres mal ingresados 1\n");
+				alert("Colores mal ingresados\n");
 				location.reload(true); 
 			}						
 		}	
@@ -234,7 +233,7 @@ entrada_usuario=[
 				continue;
 		}
 		if(total_CadaElemento[piezasentotal]!=6){
-			alert("Caracteres mal ingresados 2\n");
+			alert("Colores mal ingresados\n");
 			location.reload(true);	
 		}	
 	}

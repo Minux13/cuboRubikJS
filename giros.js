@@ -12,15 +12,16 @@ function giro( cara, direccion, Cubo){
 		;
 	else{
 		alert("\n\n Error fatalisisisisismo por la direccion\n\n");
-		return 0;
+		alert("Colores mal ingresados\n");
+		location.reload(true); 
 	}
 	
 	if(cara>=0 && cara<=5)
 		;
 	else{
 		alert("\n\n Error fatalisisisisismo por la Cara\n\n");
-		return 0;
-	}
+		alert("Colores mal ingresados\n");
+		location.reload(true); 	}
 	
 	
 	for(valorCara=0; valorCara<=5; valorCara++){

@@ -79,8 +79,10 @@ function permutacionEsquinas( caraReferencia,  Cubo){
 	
 	else {
 		if(cR==4){
-			alert("\nUpsss, algo paso en la permutacion de las esquinas de la caraF\n");
-			return COMPLETO;
+			//alert("\nUpsss, algo paso en la permutacion de las esquinas de la caraF\n");
+			//return COMPLETO;
+			alert("Colores mal ingresados\n");
+			location.reload(true); 
 		}
 		else
 			return INCOMPLETO;

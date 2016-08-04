@@ -65,8 +65,9 @@ function esquinasA( pieza, Cubo){
 						return retorno;
 					}
 					else {
-						alert("\nUppps, algo salio mal.  Elementos mal acomodados\n esquinasA \n");
-						exit();
+						//alert("\nUppps, algo salio mal.  Elementos mal acomodados\n esquinasA \n");
+						alert("Colores mal ingresados\n");
+						location.reload(true); 
 					}
 				}				
 			}	

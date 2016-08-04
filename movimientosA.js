@@ -85,8 +85,11 @@ function movimientosA( pieza, posicionAUbicar, caraUbicacion, elementoUbicacion,
 			giro(caraAlLadoDelElemento[posicionAUbicar], 2, Cubo);
 			return COMPLETO;	
 	}
-	else
+	else{
 		alert("\n  Lastima  \n");
+		alert("Colores mal ingresados\n");
+		location.reload(true);
+	}
 		
 }
 /*

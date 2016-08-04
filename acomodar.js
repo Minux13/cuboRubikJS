@@ -14,7 +14,9 @@ function acomodar( caraReferencia, Cubo){
 	else if(Cubo[caraC][8][0]==caraB)
 		giro(caraF, IZQUIERDA, Cubo);
 	
-	else 
-		alert("\nQue demonios paso aqui?\n Acomodar \n");
-		
+	else {
+		//alert("\nQue demonios paso aqui?\n Acomodar \n");
+		alert("Colores mal ingresados\n");
+		location.reload(true); 
+	}
 }

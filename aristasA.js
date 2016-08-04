@@ -99,9 +99,9 @@ function aristasA(Cubo, pieza, losCuatroBien){
 					return retorno;
 				}
 				else {
-					alert("\nUppps, algo salio mal.  Elementos mal acomodados \n aristas A\n");
-					exit();
-				}
+					//alert("\nUppps, algo salio mal.  Elementos mal acomodados \n aristas A\n");
+					alert("Colores mal ingresados\n");
+					location.reload(true); 				}
 			}				
 		}	
 	}
