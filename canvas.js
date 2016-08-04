@@ -286,57 +286,56 @@ function cubo(){
 	if(numMC==0){
 		
 		//Crea el texto de los movimientos
-		var texto= "Movimientos: <br><br>   ";
+		var texto= "<h3>Movimientos:</h3> <br> <center>Caras: U=Up, F=Front, R=Right, B=Back, L=Left, D=Down <br>Dirección: -R=Sentido horario, -I=Sentido antihorario</center><br><br>   ";
 		
 		for(movimiento = 0; movimiento <= movimientosConjunto.length; movimiento++){
 			if(movimientosConjunto[movimiento]=="AD"){
-				texto = texto + "Up-Derecha,  ";
+				texto = texto + "[U-R]  ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="AI"){
-				texto = texto + "Up-Izquierda,   ";
+				texto = texto + "[U-I]   ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="BD"){
-				texto = texto + "Front-Derecha,   ";
+				texto = texto + "[F-R]   ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="BI"){
-				texto = texto + "Front-Izquierda,   ";
+				texto = texto + "[F-I]   ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="CD"){
-				texto = texto + "Right-Derecha,   ";
+				texto = texto + "[R-R]   ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="CI"){
-				texto = texto + "Right-Izquierda,   ";
+				texto = texto + "[R-I]   ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="DD"){
-				texto = texto + "Back-Derecha,   ";
+				texto = texto + "[B-R]   ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="DI"){
-				texto = texto + "Back-Izquierda,   ";
+				texto = texto + "[B-I]   ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="ED"){
-				texto = texto + "Left-Derecha,  ";
-			}
+				texto = texto + "[L-R]  ";
+			}	
 
 			else if(movimientosConjunto[movimiento]=="EI"){
-				texto = texto + "Left-Izquierda,  ";
+				texto = texto + "[L-I]  ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="FD"){
-				texto = texto + "Down-Derecha,  ";
+				texto = texto + "[D-R]  ";
 			}
 
 			else if(movimientosConjunto[movimiento]=="FI"){
-				texto = texto + "Down-Izquierda,  ";
+				texto = texto + "[D-I]  ";
 			}		
-
 			else
 				console.log("Excepcion en los if de cubo()");
 		}
