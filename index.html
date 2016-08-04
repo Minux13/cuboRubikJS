@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Resuelve el Cubo Rubik</title>
+	<meta charset="UTF-8">
+	<style>
+	body {
+		   background-color: rgb(0, 60, 100);
+		   color: #DDDDDD;
+		   padding: 20px;
+           /*margin: 30px;*/
+		   overflow-y:auto;
+		   overflow-x:auto;
+		   font-size: 100%;
+		   font-family: "Helvetica";
+		   font-weight: bold;
+		
+         }
+	canvas {
+	    padding-left: 0;
+    	padding-right: 0;
+    	margin-left: auto;
+    	margin-right: auto;
+    	display: block;
+	}
+	</style>
+	<script src="entrada.js"></script>
+	<script src="acomodar.js"></script>
+	<script src="aristasA.js"></script>
+	<script src="aristasMedio.js"></script>
+	<script src="constantes.js"></script>
+	<script src="cruzCaraF.js"></script>
+	<script src="cuboSolucion.js"></script>
+	<script src="esquinasA.js"></script>
+	<script src="giros.js"></script>
+	<script src="movimientoAristasMedio.js"></script>
+	<script src="movimientoEsquinasA.js"></script>
+	<script src="movimientosA.js"></script>
+	<script src="obtenerElementos.js"></script>
+	<script src="orientacionUltimaCapa.js"></script>
+	<script src="permutacionAristas.js"></script>
+	<script src="permutacionEsquinas.js"></script>
+	<script src="canvas.js"></script>
+	<script src="canvasCambioColor.js"></script>
+	<script src="cuboAtras.js"></script>
+	<script src="minuxLogo.js"></script>
+</head>
+<body onload="entrada();" id="cuerpo">
+	<center><h1>  Resolución del cubo rubik</h1></center>
+	<p id="parrafo">Selecciona los colores de la barra derecha y rellena todas las piezas del cubo, como si las caras del cubo se deplegaran como en la imagen. Toma dos caras de referencia, una como referencia hacia arriba y otra hacia el frente. Puedes rellenar el cubo con un ejemplo presionando el botón. Cuando termines preciona el botón "Listo".<p>
+	<canvas id="myCanvas" width=1200 height=700>
+		Tu navegador no sorporta esa aplicación
+	</canvas>
+	<div id="segundoParrafo">
+	
+	</div>
+</body>
+</html>
