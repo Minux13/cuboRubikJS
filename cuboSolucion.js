@@ -1,16 +1,4 @@
-/*
-El Cubo[6][10][3]  que en C son 6 caras, del 0 al 5, 10 elementos, con el elemento 0 sin contar en ningun arreglo
-para seguir el númoero original de los elementos en el cubo, estos vienen a ser los las posiciones, el último elemento
-pertenece a un arreglo donde el elemento 0 continee el color de posición, que se representan del 0 al 5, y el elemento 
-1 es el numero de la pieza de la cara que esta contenida en esa posición
-*/
-
-
-
-//*****En este archivo incluí del canvas main(), colorsC[][], y movimientosConjunto[] 
-
-
-var movimientosConjunto=[];    ///Es el conjunto de movimientos que hace el cubo, se agregan en el archivo giros, que contiene los movimientos y que también usa la función main() de canvas para saber que función de movimiento y dibujo va a hacer
+var movimientosConjunto=[];   
 
 function main(){
 
