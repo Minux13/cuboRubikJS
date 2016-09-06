@@ -1,0 +1,92 @@
+	body {
+		background-color: rgb(0, 60, 100);
+		color: #DDDDDD;
+		padding: 20px;
+        /*margin: 30px;*/
+		overflow-y:auto;
+		overflow-x:auto;
+		font-size: 100%;
+		font-family: "Helvetica";
+		font-weight: bold;
+		
+         }
+	canvas {
+	    padding-left: 0;
+    	padding-right: 0;
+    	margin-left: auto;
+    	margin-right: auto;
+    	display: block;
+	}
+
+	.btn {
+		background: #ccc;
+		color: #333;
+		cursor: pointer;
+		font-size:16px;
+		font-weight: 100;
+		line-height: 45px;
+		text-decoration: none;
+		vertical-align: middle;
+		padding-left: 40px;
+		padding-right: 40px;
+		border: 2px solid #999999;
+	}
+
+	#seccionBotones {
+		width: 950px;
+		display: block;
+		margin: auto;
+		text-align: center;
+		overflow: auto;
+	}
+
+	.btn1 {
+		display: inline-block;
+		margin-right: 100px;
+		margin-left: 100px;
+		margin-bottom: 30px;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+		z-index: 0;  
+	}
+
+	.btn1 span {
+		z-index: 20;
+		font-size: 18px;
+		font-family: Arial;
+		letter-spacing: 1px;
+		text-shadow: 3px 2px 3px #666;
+	}
+
+	.btn1:after {
+		background: #44f;
+		content: "";
+		height: 70px;
+		left: -470px;
+		position: absolute;
+		top: -15px;
+
+		-webkit-transition: all 550ms;
+		transition: all 550ms;
+
+		-ms-transform: skewX(50deg); /* IE 9 */
+		-webkit-transform: skewX(50deg); /* Safari */
+		transform: skewX(50deg);
+  
+		background: linear-gradient(to right,  rgb(80, 100, 140) 70%, #cccccc);
+		width: 450px;
+		z-index: -10;
+	}
+
+	.btn1:hover:after {
+  		left: -18%;
+  		-webkit-transition: all 550ms;
+		transition: all 550ms;
+	}
+
+	.btn1:active {
+		
+		transform: scale(0.95, 1);	
+	}
+

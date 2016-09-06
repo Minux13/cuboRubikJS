@@ -39,9 +39,8 @@ function aristasMedio( colorPieza, Cubo){
 						return retorno;
 					}
 					else {
-						//alert("\nUppps, algo salio mal.  Elementos mal acomodados\n aritasMedio\n");
-						alert("Colores mal ingresados\n");
-						location.reload(true); 
+						alertaColoresMalIngresados();
+						return COLORESMAL;
 					}
 				}				
 			}	

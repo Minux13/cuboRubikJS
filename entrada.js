@@ -118,7 +118,13 @@ function entrada(){
 	window.canvas.addEventListener("click", clickear);
 
 	document.getElementById("myCanvas").addEventListener("mousemove",pasoDelCursor);
+	
 
+	botoncinRellenar = document.getElementById("btnRellenar");
+	botoncinRellenar.addEventListener("click",clickRellenar);
+	
+	botoncinResolver = document.getElementById("btnResolver");
+	botoncinResolver.addEventListener("click",clickResolver);
 
 }
 
@@ -776,6 +782,7 @@ function clickear(ev){
 	}
 
 
+/*
 	//Si da boton "listo" todo se para y envia 
 	if(cursor.clickX >= boton.x && cursor.clickX <= boton.x + boton.ancho && cursor.clickY >= boton.y && cursor.clickY <= boton.y + boton.alto){
 		document.getElementById("myCanvas").removeEventListener("mousemove", pasoDelCursor);
@@ -810,12 +817,7 @@ function clickear(ev){
 		];
 				
 	}
-
-
-
-
-
-	console.log(cursor.clickX + "     " + cursor.clickY)
+*/
 
 }
 
@@ -843,21 +845,6 @@ function dibujaTodo(){
 	dibujaBotonListo();
 	dibujaBotonRellenar();
 
-	//Dibuja el circulo del cursor
-	/*if(seleccionColor.clickeoEstaSeccion == 1){   //Si cleckeo la seccion de seleccion de colores dibuja el puntero del mouse
-		ctx.beginPath();
-		  ctx.fillStyle = "rgba(0,0,0, 0.4)";
-		  ctx.arc(cursor.cx, cursor.cy, 9, 0, Math.PI * 2, true);
-		  ctx.fill();
-          ctx.closePath();
-
-		ctx.beginPath();
-		  ctx.fillStyle = cursor.color;
-          ctx.arc(cursor.cx, cursor.cy, 7, 0, Math.PI * 2, true);
-          ctx.closePath();
-		 // ctx.stroke();
-          ctx.fill();
-	}*/
 
 	ctx.drawImage(cubo2D.logo, 4*cubo2D.tamanoPieza+2, cubo2D.tamanoPieza+20, cubo2D.tamanoPieza-4, 11);
 
@@ -932,7 +919,7 @@ function dibujaTodo(){
 			canvas.style.cursor = "auto";
 	}
 
-	//Checa si pasa por el boton
+/*	//Checa si pasa por el boton
 	if(cursor.cx >= boton.x && cursor.cx <= boton.x + boton.ancho && cursor.cy >= boton.y && cursor.cy <= boton.y + boton.alto){
 		boton.cambioColor = 1;		
 		canvas.style.cursor = "pointer";
@@ -948,8 +935,52 @@ function dibujaTodo(){
 	else{
 		botonRellenar.cambioColor = 0;		
 	}
+	*/
 
 }
 
 
+function clickRellenar(){
+		
+	var r=color.red;
+	var a=color.blue;
+	var b=color.white;
+	var y=color.yellow;
+	var n=color.orange;
+	var v=color.green;
 
+	entradaUsuario.colores = [
+		[b,r,a,y,b,b,v,n,n,r],
+		[b,b,v,a,n,a,b,a,n,n],
+		[b,b,b,n,r,n,r,v,r,b],
+		[b,a,r,v,v,v,y,r,a,a],
+		[b,y,n,v,v,r,y,y,b,n],
+		[b,b,a,y,a,y,y,r,y,v]			
+	];
+}
+
+function clickResolver(){
+		
+	main();
+	
+}
+
+function borrarCanvasEntrada(){
+		
+	document.getElementById("myCanvas").removeEventListener("mousemove", pasoDelCursor);
+	document.getElementById("myCanvas").removeEventListener("click", clickear);
+	document.getElementById("btnRellenar").removeEventListener("click", clickRellenar);
+	document.getElementById("btnResolver").removeEventListener("click", clickResolver);
+
+	clearInterval(reproduccion);
+	ctx.clearRect(-100, -100, 1500, 1500);
+	canvas.style.cursor = "auto";
+	var cuerpo = document.getElementById("cuerpo");
+	var seccionBotones = document.getElementById("seccionBotones");
+	var parrafo = document.getElementById("parrafo");
+
+	seccionBotones.removeChild(botoncinRellenar);
+	seccionBotones.removeChild(botoncinResolver);
+	var throwawayNode = cuerpo.removeChild(parrafo);
+		
+}

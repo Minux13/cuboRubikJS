@@ -86,9 +86,8 @@ function movimientosA( pieza, posicionAUbicar, caraUbicacion, elementoUbicacion,
 			return COMPLETO;	
 	}
 	else{
-		alert("\n  Lastima  \n");
-		alert("Colores mal ingresados\n");
-		location.reload(true);
+		alertaColoresMalIngresados();
+		return COLORESMAL;
 	}
 		
 }

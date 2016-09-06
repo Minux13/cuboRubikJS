@@ -5,6 +5,7 @@ const COMPLETO = 0
 const INCOMPLETO = 1
 const OCUPADO = 1
 const DESOCUPADO = 0
+const COLORESMAL = -2
 const caraA = 0
 const caraB = 1
 const caraC = 2

@@ -144,10 +144,8 @@ function orientacionUltimaCapa( caraReferencia, Cubo){
     
     else{
     	if(cR==4){
-			//alert("\nUpsss, algo paso en la orientacion de la ultima cara\n");
-			//return COMPLETO;
-			alert("Colores mal ingresados\n");
-			location.reload(true); 
+			alertaColoresMalIngresados();
+			return COLORESMAL;
 		}
 		else
 			return INCOMPLETO;

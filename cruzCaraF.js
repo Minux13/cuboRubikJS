@@ -85,10 +85,8 @@ function cruzCaraF( caraReferencia, Cubo){
 	
 	else {
 		if(cR==4){
-			//alert("\nUpsss, algo paso en la orientacion de las aristas de la caraF\n");
-			alert("Colores mal ingresados\n");
-			location.reload(true); 
-			//return COMPLETO;
+			alertaColoresMalIngresados();
+			return COLORESMAL;
 		}
 		else
 			return INCOMPLETO;

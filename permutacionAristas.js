@@ -70,10 +70,8 @@ function permutacionAristas( caraReferencia, Cubo){
 			return COMPLETO;		
 		}
 		else{
-			//alert("\nAlgo salio mal con las permutaciones de las aristas horarias y antihorarias\n");	
-			//return COMPLETO;
-			alert("Colores mal ingresados\n");
-			location.reload(true); 
+			alertaColoresMalIngresados();
+			return COLORESMAL;
 		}
 	}
 
@@ -117,10 +115,8 @@ function permutacionAristas( caraReferencia, Cubo){
 	
 	else {
 		if(cR==4){
-			//alert("\nUpsss, algo paso en la permutacion de las aristas de la caraF\n");
-			//return COMPLETO;
-			alert("Colores mal ingresados\n");
-			location.reload(true); 
+			alertaColoresMalIngresados();
+			return COLORESMAL;
 		}
 		else
 			return INCOMPLETO;

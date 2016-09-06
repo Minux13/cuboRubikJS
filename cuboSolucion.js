@@ -65,47 +65,6 @@ function main(){
 	}
 
 
-/*
-entrada_usuario=[
-['r','a','n','r','a','b','v','y','n','r'],
-['r','a','b','v','a','a','n','b','v','n'],
-['r','y','b','y','a','n','v','a','n','n'],
-['r','a','y','b','y','v','b','v','r','v'],
-['r','r','y','n','r','r','b','b','a','n'],
-['r','v','r','b','r','y','v','r','y','y']
-]
-
-
-	entrada_usuario=[
-		['r','r','a','y','b','b','v','n','n','r'],
-		['r','b','v','a','n','a','b','a','n','n'],
-		['r','b','b','n','r','n','r','v','r','b'],
-		['r','a','r','v','v','v','y','r','a','a'],
-		['r','y','n','v','v','r','y','y','b','n'],
-		['r','b','a','y','a','y','y','r','y','v']
-	]
-
-
-
-
-	for(cara=0; cara<=5; cara++){
-		for(num_elemento=1; num_elemento<=9; num_elemento++){	
-			
-			entrada_usuario[cara][num_elemento][0]=getchar();
-
-			raybbvnnr
-entrada_usuario=[
-['r','a','n','r','a','b','v','y','n','r'],
-['r','a','b','v','a','a','n','b','v','n'],
-['r','y','b','y','a','n','v','a','n','n'],
-['r','a','y','b','y','v','b','v','r','v'],
-['r','r','y','n','r','r','b','b','a','n'],
-['r','v','r','b','r','y','v','r','y','y']
-]
-			}	
-	}
-	*/
-	
 	
 		
 	/************************Validación**************************/
@@ -113,11 +72,9 @@ entrada_usuario=[
 	//Verifica que cada elemento 5 de cada cara sea distinto
 	for(cara=0; cara<=5; cara++){
 		for(cara_compara=cara+1; cara_compara<=5; cara_compara++){	
-			
 			if(entrada_usuario[cara][5]==entrada_usuario[cara_compara][5]){
-				//alert("Caracteres mal ingresados.\n");
-				alert("Colores mal ingresados."); 	// Hay elementos centrales de las caras del mismo color\n");
-				location.reload(true);
+				alertaColoresMalIngresados();			
+				return 0;
 			}				
 		}	
 	}
@@ -161,9 +118,8 @@ entrada_usuario=[
 				total_piezas_color[5]++;
 			}
 			else {
-				alert("Colores mal ingresados. Se introdujo un color que no concordo con uno de los seis colores\n");
-				location.reload(true); 
-			
+				alertaColoresMalIngresados();
+				return 0;
 			}
 			
 		}	
@@ -173,8 +129,8 @@ entrada_usuario=[
 	//Cada elemento de total_piezas_color tiene el numero de elementos que se encontraron de un color, cada cara tiene 9 asi que el valor de cada elemento del arreglo debe ser 9
 	for(piezasporcara=0; piezasporcara<=5; piezasporcara++){
 		if(total_piezas_color[piezasporcara]!=9){
-			alert("Colores mal ingresados.\n");   // Se introdujo un color de elemento de mas\n");
-			location.reload(true); 		
+			alertaColoresMalIngresados();
+			return 0;	
 		}	
 	}
 	
@@ -199,7 +155,7 @@ entrada_usuario=[
 	}
 	
 	
-	//Validación del número del elemento, al parecer valida que sea un número del 1 al 9
+	//Validación del número del elemento, no me acuerdo muy bien que hice aquí, al parecer valida que sea un número del 1 al 9
 	for(cara=0; cara<=5; cara++){
 		for(num_elemento=1; num_elemento<=9; num_elemento++){
 			if(num_elemento==5){					
@@ -209,9 +165,9 @@ entrada_usuario=[
 				total_CadaElemento[num_elemento]=total_CadaElemento[num_elemento]+1;
 			}	
 			else{
-				alert("Colores mal ingresados\n");
-				location.reload(true); 
-			}						
+				alertaColoresMalIngresados();
+				return 0;
+ 			}						
 		}	
 	}
 
@@ -221,8 +177,8 @@ entrada_usuario=[
 				continue;
 		}
 		if(total_CadaElemento[piezasentotal]!=6){
-			alert("Colores mal ingresados\n");
-			location.reload(true);	
+			alertaColoresMalIngresados();
+			return 0;
 		}	
 	}
 	
@@ -269,33 +225,60 @@ entrada_usuario=[
 	}
 
 
-
-
 	/******************Empieza a resolverlo*******************/
 
 
 	while(INCOMPLETO){
 		completado=aristasA(Cubo, 2, 0);
-		if(completado==COMPLETO)
+		console.log(completado)
+		if(completado==COMPLETO){
+				console.log("daerer")
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+		console.log("while 1");
 	}	
 	
 	while(INCOMPLETO){
 		completado=aristasA(Cubo, 4, 0);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 2");
 	}	
 	
 	while(INCOMPLETO){
 		completado=aristasA(Cubo, 6, 0);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 3");
 	}	
 	
 	while(INCOMPLETO){
 		completado=aristasA(Cubo, 8, 0);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 4");
 	}
 	
 	
@@ -304,26 +287,54 @@ entrada_usuario=[
 	
 	while(INCOMPLETO){
 		completado=esquinasA(1, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 5");
 	}	
 		
 	while(INCOMPLETO){
 		completado=esquinasA(3, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 6");
 	}
 		
 	while(INCOMPLETO){
 		completado=esquinasA(7, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 7");
 	}
 	
 	while(INCOMPLETO){
 		completado=esquinasA(9, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 8");
 	}
 	
 	//printf("\n");
@@ -331,147 +342,145 @@ entrada_usuario=[
 	
 	while(INCOMPLETO){
 		completado=aristasMedio(1, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 9");
 	}
 		
 	while(INCOMPLETO){
 		completado=aristasMedio(2, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 10");
 	}
 	
 	while(INCOMPLETO){
 		completado=aristasMedio(3, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 11");
 	}
 		
 	while(INCOMPLETO){
 		completado=aristasMedio(4, Cubo);
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 12");
 	}
 	
 
-	//printf("\n");
-	
+	//Cara de abajo
+		
 	caraReferencia=1;
 	while(INCOMPLETO){
 		completado=cruzCaraF(caraReferencia, Cubo);
 		caraReferencia++;
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 13");
 	}
 	
-	//printf("\n");
+	//////
 
 	caraReferencia=1;
 	while(INCOMPLETO){
 		completado=orientacionUltimaCapa(caraReferencia, Cubo);
 		caraReferencia++;
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 14");
 	}
 	
-	//printf("\n");
+	///////
 	
 	caraReferencia=1;
 	while(INCOMPLETO){
 		completado=permutacionEsquinas(caraReferencia, Cubo);
 		caraReferencia++;
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 15");
 	}
 	
-	//printf("\n");
+	//////
 	
 	caraReferencia=1;
 	while(INCOMPLETO){
 		completado=permutacionAristas(caraReferencia, Cubo);
 		caraReferencia++;
-		if(completado==COMPLETO)
+		if(completado==COMPLETO){
 			break;
+		}
+		else if(completado == COLORESMAL){
+			movimientosConjunto=[];
+			return 0;		
+		}
+
+		console.log("while 16");
 	}
 	
 	
-	acomodar(1, Cubo);
+	var varAcomodar; 
 
-	cubo();
-	
+	varAcomodar = acomodar(1, Cubo);
 
-
-
-
-
-	/*
-	printf("\n\n");
-	
-	
-	for(cara=0; cara<=5; cara++){
-		for(num_elemento=1; num_elemento<=9; num_elemento++){
-			if(num_elemento==5){					
-				continue;
-			}		
-			if(Cubo[cara][num_elemento][0]==cara && Cubo[cara][num_elemento][1]==num_elemento){
-				;
-			}	
-			else{
-				printf("\nAlgo salio mal con el cubo\n");
-				return 0;
-			}
-			if(cara==5 && num_elemento==9){
-				printf("\n\n****EL CUBO ESTA RESUELTO****\n\n");
-				return 0;
-			}						
-		}	
+	if(varAcomodar == COLORESMAL){
+		movimientosConjunto=[];
+		return 0;		
 	}
-	*/
 
-	//return 0;	
+	borrarCanvasEntrada();
 
-/*	for(i=0; i<movimientosConjunto.length; i++){
+	cubo();	
 
-		if(movimientosConjunto[i]=="AD"){
-			console.log("AD, ");
-		}
-		else if(movimientosConjunto[i]=="AI"){
-			console.log("AI, ");	
-		}
-		else if(movimientosConjunto[i]=="BD"){
-			console.log("BD, ");
-		}
-		else if(movimientosConjunto[i]=="BI"){
-			console.log("BI, ");	
-		}
-		else if(movimientosConjunto[i]=="CD"){
-			console.log("CD, ");	
-		}
-		else if(movimientosConjunto[i]=="CI"){
-			console.log("CI, ");	
-		}
-		else if(movimientosConjunto[i]=="DD"){
-			console.log("DD, ");	
-		}
-		else if(movimientosConjunto[i]=="DI"){
-			console.log("DI, ");	
-		}
-		else if(movimientosConjunto[i]=="ED"){
-			console.log("ED, ");	
-		}
-		else if(movimientosConjunto[i]=="EI"){
-			console.log("EI, ");	
-		}
-		else if(movimientosConjunto[i]=="FD"){
-			console.log("FD, ");	
-		}
-		else if(movimientosConjunto[i]=="FI"){
-			console.log("FI, ");	
-		}
-			
-	}*/
-	
 }
+
+
+
+
+
 
 /*
 avvabnary

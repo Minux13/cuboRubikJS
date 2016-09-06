@@ -66,8 +66,8 @@ function esquinasA( pieza, Cubo){
 					}
 					else {
 						//alert("\nUppps, algo salio mal.  Elementos mal acomodados\n esquinasA \n");
-						alert("Colores mal ingresados\n");
-						location.reload(true); 
+						alertaColoresMalIngresados();
+						return COLORESMAL;
 					}
 				}				
 			}	
